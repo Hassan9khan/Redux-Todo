@@ -30,13 +30,16 @@ const App = () => {
   }
 
   const editItemFromRedux = (index) => {
-    const editValue = prompt('new value')
-    dispatch(editTodo({
-      index,
-      title: editValue,
-    })) 
-  }
-
+    const editValue = prompt('Enter the updated value');
+    if (editValue) {
+      dispatch(
+        editTodo({
+          index,
+          title: editValue,
+        })
+      );
+    }
+  };
   // const editItemFromRedux = (index) => {
   //   const editValue = prompt('Enter the updated value');
   //   if (editValue) {
